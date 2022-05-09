@@ -1,2 +1,3 @@
-# histogram
-A global platform for sharing data.
+# Histogram
+
+A global platform for sharing data! 

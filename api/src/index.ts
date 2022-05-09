@@ -1,6 +1,18 @@
 import express, { application } from 'express';
+import mysql from 'promise-mysql';
+import { openMysqlConnection } from './mysql-client';
 
-function main() {
+type User = {
+  id: number;
+  name: string;
+  age: number;
+};
+
+async function main() {
+  await openMysqlConnection();
+
+  // [12, 13]
+
   const app = express();
 
   app.use('/users', require('./userRoutes'));
@@ -11,9 +23,4 @@ function main() {
   });
 }
 
-function ethanTran(name: string, sex: number) {
-  application: TouchEvent; 
-}
-
 main();
-
