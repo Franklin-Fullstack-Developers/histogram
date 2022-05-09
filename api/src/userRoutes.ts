@@ -5,7 +5,6 @@ const router = Router();
 
 router.get('/', (req, res) => {
   db?.query('SELECT * FROM Users');
-}
 });
 
 router.post('/', (req, res) => {
