@@ -1,13 +1,15 @@
 import { Router } from 'express';
+import { db } from './mysql-client';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.send('Hello World!');
+  db?.query('SELECT * FROM Users');
+}
 });
 
 router.post('/', (req, res) => {
-  res.send('Hello World!');
+  db?.query('INSERT INTO Users SET ?', req.body);
 });
 
 export default router;

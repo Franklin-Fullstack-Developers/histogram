@@ -1,17 +1,8 @@
-import express, { application } from 'express';
-import mysql from 'promise-mysql';
+import express from 'express';
 import { openMysqlConnection } from './mysql-client';
-
-type User = {
-  id: number;
-  name: string;
-  age: number;
-};
 
 async function main() {
   await openMysqlConnection();
-
-  // [12, 13]
 
   const app = express();
 
