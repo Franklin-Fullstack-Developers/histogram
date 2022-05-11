@@ -1,7 +1,7 @@
 import { Connection } from 'promise-mysql';
 import mysql from 'promise-mysql';
 
-export let db: Connection | null = null;
+export let db: Connection;
 
 export async function openMysqlConnection() {
   const connection = await mysql.createConnection({
