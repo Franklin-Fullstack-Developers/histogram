@@ -1,23 +1,22 @@
-import { Button, View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import theme from "./theme";
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.titleContainer}>Home Screen</Text>
-
         <Text style={styles.title}>Histogram</Text>
         <Text style={styles.authorSubheading}>BY FULLSTACK DEVELOPERS</Text>
       </View>
 
       <View>
-        {/* Navigation buttons */}
-        <TouchableOpacity style={styles.button} /*title="Go to Create Posts"*/  onPress={() => {
+        <TouchableOpacity style={styles.button} onPress={() => {
           navigation.navigate("CreatePost");
         }}>
-          Create Posts
+          Create Post
         </TouchableOpacity>
-        <TouchableOpacity style={{...styles.button, ...styles.buttonContainer}}/*title="Go to Posts"*/  onPress={() => {
+
+        <TouchableOpacity style={styles.button} onPress={() => {
           navigation.navigate("Posts");
         }}>
           Go to Posts
@@ -32,31 +31,31 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-evenly'
   },
   button: {
     textAlign: 'center',
+    width: '85%',
+    height: 50,
+    marginHorizontal: 'auto',
+    backgroundColor: theme.colors.secondary,
+    display: 'flex',
+    justifyContent: 'center',
+    fontFamily: theme.fonts.button,
     color: 'white',
-    width: 50,
-    height: 30,
-    backgroundColor: '#860EC7',
-    borderRadius: 50,
-    shadowColor: '#ffffff',
-    shadowRadius: 1
-  },
-  buttonContainer: {
-    marginBottom: 50
+    borderRadius: 20,
+    marginBottom: 20
   },
   title: {
-    textAlign: 'center'
-  },
-  titleContainer: {
     textAlign: 'center',
-    /*fontFamily: ' '*/
+    fontFamily: theme.fonts.title,
+    fontSize: 64,
+    color: theme.colors.secondary
   },
   authorSubheading: {
     textAlign: 'center',
-    fontColor: '#A011ED',
-    /*fontFamily: ''*/
+    fontFamily: theme.fonts.codeSubtitle,
+    fontSize: 18,
+    marginTop: 10
   }
 });
